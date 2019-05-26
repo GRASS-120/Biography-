@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib import admin
+from django.urls import path, include
+from Biography.views import show_main_page
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', show_main_page),
+    path('', include('lifes.urls')),
+   # path('', include('professions.urls')),
 ]
